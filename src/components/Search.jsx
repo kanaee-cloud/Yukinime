@@ -1,13 +1,12 @@
-// Search.jsx
 import { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Loading from "../assets/services.gif";
 import AnimeDetails from "../pages/AnimeDetails/AnimeDetails";
 
 const Search = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [anime, setAnime] = useState([]);
   const [keyword, setKeyword] = useState([]);
   const [clicked, setClicked] = useState(false);
@@ -17,7 +16,6 @@ const Search = () => {
       .get(`https://nice-puce-capris.cyclic.app/anime?name=${animeKey}`)
       .then((d) => setAnime(d.data));
     setClicked(true);
-    navigateTo("/anime-details"); // Navigate to /anime-details after fetching data
   };
 
   const thisObject = (obj) => {
@@ -27,14 +25,10 @@ const Search = () => {
     );
   };
 
-  const navigateTo = (path) => {
-    history.push(path);
-  };
-
   return (
     <>
       <header className="py-8 bg-header">
-      <div className="container mx-auto">
+        <div className="container mx-auto">
           <div className="flex lg:justify-between items-center">
             <a
               href="/"
@@ -90,8 +84,7 @@ const Search = () => {
             ? "text-center p-3 bg-darkBg text-white"
             : "absolute bottom-0 left-0 right-0 text-center p-3 bg-darkBg text-white"
         }
-      >
-      </footer>
+      ></footer>
     </>
   );
 };
