@@ -11,6 +11,8 @@ const Search = () => {
   const [keyword, setKeyword] = useState([]);
   const [clicked, setClicked] = useState(false);
 
+  console.log(anime);
+
   const btnClick = (animeKey) => {
     axios
       .get(`https://nice-puce-capris.cyclic.app/anime?name=${animeKey}`)
@@ -57,6 +59,11 @@ const Search = () => {
         </div>
       </header>
       <div className="container mx-auto mt-5 text-white p-3">
+        {anime.length <= 0 && clicked == false ? (
+          <>
+            <h1 className="text-center">ini buat content lain</h1>
+          </>
+        ) : null}
         {clicked === true ? (
           thisObject(anime) ? (
             <AnimeDetails anime={anime} />

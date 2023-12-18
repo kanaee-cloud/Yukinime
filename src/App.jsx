@@ -2,7 +2,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
-import Search from "./components/Search.jsx";
 import AnimeDetails from "./pages/AnimeDetails/AnimeDetails.jsx";
 import "./App.css";
 
