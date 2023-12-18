@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-header{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.btn-on{
+  color: #FFBF18;
+  background: transparent;
+  border: 3px solid #FFBF18;
+  border-radius: 10px;
+  transition: all .50s ease;
+}
+
+.btn-on:hover {
+  color: #212A3E;
+  background: #FFBF18;
+}
+
+.btn-on:after{
+  color: #212A3E;
+  background: #FFBF18;
+}
+
+.btn {
+  color: #FFBF18;
+  background: transparent;
+  border: 3px solid #FFBF18;
+  border-radius: 10px;
+  transition: all .50s ease;
+}
+
+.btn:hover {
+  background: #FFBF18;
+  color: #100E34;
+  box-shadow: 0 8px 32px 0 #FFBF18;
+  backdrop-filter: blur( 13px );
+  -webkit-backdrop-filter: blur( 13px );
+  border: 3px solid rgba( 255, 255, 255, 0.18 );
+}
+@layer base {
+  body {
+    @apply font-secondary text-lg leading-8 text-white bg-site;
+  }
+  .btn {
+    @apply font-tertiary text-white font-medium;
+  }
+  .btn-sm {
+    @apply h-[48px] px-2 text-sm;
+  }
+  .btn-medium{
+    @apply h-[48px] w-full px-2 text-sm
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base from-[#FF0000] to-[#950101] hover:from-[#950101] hover:to-[#FF0000];
+  }
+  .btn-link {
+    @apply text-base;
+  }
+  .section {
+    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+  }
+}
