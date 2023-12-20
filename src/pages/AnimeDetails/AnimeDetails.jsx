@@ -7,6 +7,7 @@ import { MdMovie } from "react-icons/md";
 
 const AnimeDetails = ({ anime }) => {
   return (
+    <>
     <div className="lg:flex max-w-6xl mx-auto lg:space-x-10">
       <div className="md:flex flex-col border-2 border-gray-500 border-opacity-30 rounded-md p-3">
         <img
@@ -30,11 +31,15 @@ const AnimeDetails = ({ anime }) => {
           <hr className="my-3 opacity-20" />
           <h1 className="font-medium text-accent">Information</h1>
           <hr className="my-1 opacity-20" />
-          <p className="text-sm opacity-70">Types : {anime.anime.type}</p>
+          <p className="text-sm opacity-70">
+            Types : {anime.anime.type}
+          </p>
           <p className="text-sm opacity-70">
             Episodes : {anime.anime.episodes}
           </p>
-          <p className="text-sm opacity-70">Aired : {anime.anime.aired}</p>
+          <p className="text-sm opacity-70">
+            Aired : {anime.anime.aired}
+          </p>
           <p className="text-sm opacity-70">
             Producers :
             {anime.anime.producers.map((producers, i) => {
@@ -52,7 +57,9 @@ const AnimeDetails = ({ anime }) => {
       </div>
       <div>
         <div className="flex items-center justify-center lg:justify-start mt-4 md:mt-0 space-x-3">
-          <h1 className="font-bold text-lg md:text-xl">{anime.anime.title}</h1>
+          <h1 className="font-bold text-lg md:text-xl">
+            {anime.anime.title}
+          </h1>
           <h1 className="text-accent px-3 py-[2px] text-md rounded-md opacity-80">
             {anime.anime.type}
           </h1>
@@ -97,13 +104,12 @@ const AnimeDetails = ({ anime }) => {
               </div>
               <div className="flex items-center space-x-3 mb-3">
                 <MdMovie size={30} className="fill-[#55e2e9]" />
-                <p className="font-medium">
-                  Premiered : {anime.anime.premiered}
-                </p>
+                <p className="font-medium">Premiered : {anime.anime.premiered}</p>
               </div>
               <div>
                 <button className="btn-on btn-medium flex items-center">
-                  <FaRegHeart size={20} />
+                  <FaRegHeart
+                    size={20} />
                   <p className="mx-auto">Add to favorite</p>
                 </button>
               </div>
@@ -125,6 +131,70 @@ const AnimeDetails = ({ anime }) => {
         </p>
       </div>
     </div>
+    <hr className="my-6 opacity-20" />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between">
+      {anime.anime.characters.map((chara, i) => (
+        <div 
+          className="flex justify-between border-2 border-gray-500 border-opacity-70 text-md p-1 rounded-md"
+          key={i}>
+            <div className="flex">
+              <img 
+                src={chara.picture} 
+                alt={chara.name}
+                width={100}
+                height={100}
+                className="rounded-md object-cover" 
+              />
+              <div className="px-1 md:px-3">
+                <a 
+                  href={chara.link}
+                  className="font-medium text-accent">
+                    {chara.name}
+                </a>
+                <p className="text-[13px] lg:text-[1rem]">{chara.role}</p>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="flex">
+                <a 
+                  href={chara.seiyuu.link}
+                  className="text-end px-1 md:px-3 text-[15px] lg:text-[1rem]"
+                  >
+                    {chara.seiyuu.name}
+                </a>
+                <img 
+                  src={chara.seiyuu.picture} 
+                  alt={chara.seiyuu.name}
+                  width={100}
+                  height={100}
+                  className="rounded-md object-cover" />
+              </div>
+            </div>
+        </div>
+      ))}
+      {anime.anime.staff.map((staff, i) => (
+        <div className="flex border-2 border-gray-500 border-opacity-70 p-1 rounded-md" key={i}>
+          <div className="flex">
+            <img
+              src={staff.picture}
+              alt={staff.name}
+              width={100}
+              height={100}
+              className="rounded-md object-cover"
+            />
+            <div className="px-3">
+              <a 
+                href={staff.link}
+                className="text-accent ">
+                  {staff.name}
+              </a>
+              <p className="text-[15px] lg:text-[1rem]">{staff.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </>
   );
 };
 

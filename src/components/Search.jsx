@@ -2,8 +2,10 @@ import { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Loading from "../assets/services.gif";
 import AnimeDetails from "../pages/AnimeDetails/AnimeDetails";
+import Loading from "./Loading";
+import Footer from "./Footer";
+import Content from "./Content";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -61,37 +63,20 @@ const Search = () => {
       <div className="container mx-auto mt-5 text-white p-3">
         {anime.length <= 0 && clicked == false ? (
           <>
-            <h1 className="text-center">ini buat content lain</h1>
+            <Content />
           </>
         ) : null}
         {clicked === true ? (
           thisObject(anime) ? (
             <AnimeDetails anime={anime} />
           ) : (
-            <div className="text-center">
-              <h1 className="opacity-70 text-2xl font-semibold mb-6">
-                Chotto matte...
-              </h1>
-              <img
-                src={Loading}
-                alt="Loading"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-            </div>
+            <Loading />
           )
         ) : null}
       </div>
       <br />
       <br />
-      <footer
-        className={
-          thisObject(anime)
-            ? "text-center p-3 bg-darkBg text-white"
-            : "absolute bottom-0 left-0 right-0 text-center p-3 bg-darkBg text-white"
-        }
-      ></footer>
+      <Footer isAnimeObject={thisObject(anime)}/>
     </>
   );
 };
