@@ -31,7 +31,7 @@ const Search = () => {
 
   return (
     <>
-      <header className="py-8 bg-header">
+      <header className="py-8">
         <div className="container mx-auto">
           <div className="flex lg:justify-between items-center">
             <a
@@ -60,7 +60,14 @@ const Search = () => {
           </div>
         </div>
       </header>
-      <div className="container mx-auto mt-5 text-white p-3">
+      <div className="mx-auto bg-header py-10">
+        <div className="mx-auto flex flex-col">
+          <h1 className="text-center lg:text-3xl font-semibold">Welcome to <span className="text-accent">Yukinime!</span></h1>
+          <p className="text-center text-[13px] pt-4">The place you can <span>watch & search anime</span></p>
+        </div>
+        
+      </div>
+      <div className="container mx-auto text-white p-3">
         {anime.length <= 0 && clicked == false ? (
           <>
             <Content />
@@ -76,7 +83,7 @@ const Search = () => {
       </div>
       <br />
       <br />
-      <Footer isAnimeObject={thisObject(anime)}/>
+      {/* <Footer isAnimeObject={thisObject(anime)}/> */}
     </>
   );
 };

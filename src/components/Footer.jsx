@@ -13,7 +13,7 @@ const Footer = ({ isAnimeObject }) => {
         </a>
         <h1 className="mt-5 text-[1rem]">
           Data from {" "}
-          <a href="myanimelist.net" className="underline">
+          <a href="myanimelist.net" className="underline text-accent">
             Myanimelist.net
           </a>
         </h1>

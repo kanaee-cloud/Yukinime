@@ -25,8 +25,9 @@ module.exports = {
         footer: "#21325E"
       },
       backgroundImage: {
-        header:"linear-gradient(rgba(30, 30, 32, 0.7),rgba(30, 30, 32, 0.7)),url(./assets/top.png)",
-        footer: "linear-gradient(rgba(30, 30, 32, 0.7),rgba(30, 30, 32, 0.7)),url(./assets/footer.jpg)"
+        header:"linear-gradient(rgba(30, 30, 32, 0.7),rgba(30, 30, 32, 0.7)),url(./assets/welcome.gif)",
+        footer: "linear-gradient(rgba(30, 30, 32, 0.7),rgba(30, 30, 32, 0.7)),url(./assets/footer.jpg)",
+        backgroundSize: "cover"
       }
     },
   },
