@@ -4,6 +4,7 @@ import { FaStar, FaRegHeart } from "react-icons/fa";
 import { FaRankingStar } from "react-icons/fa6";
 import { CgStudio } from "react-icons/cg";
 import { MdMovie } from "react-icons/md";
+import Footer from "../../components/Footer";
 
 const AnimeDetails = ({ anime }) => {
   return (
@@ -194,6 +195,7 @@ const AnimeDetails = ({ anime }) => {
         </div>
       ))}
     </div>
+    
   </>
   );
 };

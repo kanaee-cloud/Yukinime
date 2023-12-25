@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 import Loading from "./Loading";
+import { FaStar } from "react-icons/fa";
+import { PiTelevision } from "react-icons/pi";
+import { IoMdPerson } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const AnimeList = () => {
@@ -24,7 +27,6 @@ const AnimeList = () => {
 
   return (
     <div className="container mx-auto mt-8">
-      
       {animeList.length > 0 ? (
         <div className="flex flex-col mx-auto">
           <h1 className="font-bold mb-4">Top 10 Anime </h1>
@@ -41,17 +43,27 @@ const AnimeList = () => {
                   className="h-48 object-cover"
                 />
                 <div className="p-4">
-                  <div className="flex items-center justify-center lg:justify-start md:mt-0 space-x-3">
-                    <h1 className="font-bold text-[15px] lg:text-lg md:text-xl">
+                  <div className="flex items-center justify-start md:mt-0 space-x-3">
+                    <h1 className="font-bold text-[12px] lg:text-lg md:text-xl">
                       {anime.title}
                     </h1>
-                    <h1 className="text-accent border border-accent px-3 py-[2px] text-md rounded-md opacity-80">
+                    <h1 className="text-accent border text-[12px] border-accent px-3 py-[2px] font-semibold text-md rounded-md opacity-80">
                       {anime.type}
                     </h1>
                   </div>
-                  <p className="text-gray-600 text-[1rem]">
-                    Rating: {anime.score}
+                  <p className="flex items-center gap-x-2 text-[12px] lg:text-[1rem] text-white justify-start">
+                    <FaStar className="items-center mb-1 text-accent text-[1.3rem]" />
+                    {anime.score}
                   </p>
+                  <p className="flex items-center gap-x-2 text-[10px] lg:text-[1rem] text-white justify-start">
+                    <PiTelevision className="items-center mb-1 text-blue-300 text-[1.4rem]" />
+                    {anime.aired.string}
+                  </p>
+                  <p className="flex items-center gap-x-2 text-[10px] lg:text-[1rem] text-white justify-start">
+                    <IoMdPerson className="items-center mb-1 text-[#F99417] text-[1.4rem]" />
+                    {anime.members}
+                  </p>
+
                 </div>
               </div>
             </Link>

@@ -60,13 +60,13 @@ const Search = () => {
           </div>
         </div>
       </header>
-      <div className="mx-auto bg-header py-10">
-        <div className="mx-auto flex flex-col">
-          <h1 className="text-center lg:text-3xl font-semibold">Welcome to <span className="text-accent">Yukinime!</span></h1>
-          <p className="text-center text-[13px] pt-4">The place you can <span>watch & search anime</span></p>
-        </div>
-        
+      <div className="flex justify-center items-center bg-header p-8">
+      <div className="text-center">
+        <h1 className="text-2xl lg:text-4xl mt-4 font-semibold">Konnichiwa <span className="text-accent">minna-san!</span></h1>
+        <p className="text-[15px] lg:text-base pt-4">Welcome to <span className="text-accent underline">Yukinime.</span></p>
+        <button className="btn border border-1 border-accent text-white px-5 py-1 mt-6 mb-4">Join now!</button>
       </div>
+    </div>
       <div className="container mx-auto text-white p-3">
         {anime.length <= 0 && clicked == false ? (
           <>
@@ -83,7 +83,6 @@ const Search = () => {
       </div>
       <br />
       <br />
-      {/* <Footer isAnimeObject={thisObject(anime)}/> */}
     </>
   );
 };

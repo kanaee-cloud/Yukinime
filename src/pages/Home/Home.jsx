@@ -4,7 +4,8 @@ import Search from "../../components/Search.jsx";
 const Home = () => {
   return (
     <div>
-      <Search />
+     
+      
     </div>
   );
 };
