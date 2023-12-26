@@ -40,30 +40,31 @@ const AnimeList = () => {
                 <img
                   src={anime.images.jpg.image_url}
                   alt={anime.title}
-                  className="h-48 object-cover"
+                  className="h-[20vh] lg:h-48 object-cover"
                 />
                 <div className="p-4">
                   <div className="flex items-center justify-start md:mt-0 space-x-3">
-                    <h1 className="font-bold text-[12px] lg:text-lg md:text-xl">
+                    <h1 className="font-bold text-sm lg:text-lg md:text-xl">
                       {anime.title}
                     </h1>
-                    <h1 className="text-accent border text-[12px] border-accent px-3 py-[2px] font-semibold text-md rounded-md opacity-80">
+                    <h1 className="text-accent border text-[11px] border-accent px-3 py-[2px] font-semibold text-md rounded-md opacity-80">
                       {anime.type}
                     </h1>
                   </div>
-                  <p className="flex items-center gap-x-2 text-[12px] lg:text-[1rem] text-white justify-start">
+                  
+                  <p className="flex items-center gap-x-2 lg:mb-2 text-[11px] lg:text-[1rem] text-white justify-start">
                     <FaStar className="items-center mb-1 text-accent text-[1.3rem]" />
                     {anime.score}
                   </p>
-                  <p className="flex items-center gap-x-2 text-[10px] lg:text-[1rem] text-white justify-start">
+                  <p className="flex items-center gap-x-2 lg:mb-2 text-[9px] lg:text-[1rem] text-white justify-start">
                     <PiTelevision className="items-center mb-1 text-blue-300 text-[1.4rem]" />
                     {anime.aired.string}
                   </p>
-                  <p className="flex items-center gap-x-2 text-[10px] lg:text-[1rem] text-white justify-start">
-                    <IoMdPerson className="items-center mb-1 text-[#F99417] text-[1.4rem]" />
+                  <p className="flex items-center gap-x-2 lg:mt-3 text-xs lg:text-[1rem] text-white justify-start">
+                    <IoMdPerson className="items-center  text-[#F99417] text-[1.2rem]" />
                     {anime.members}
                   </p>
-
+                  
                 </div>
               </div>
             </Link>
