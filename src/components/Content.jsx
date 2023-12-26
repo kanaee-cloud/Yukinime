@@ -40,14 +40,14 @@ const AnimeList = () => {
                 <img
                   src={anime.images.jpg.image_url}
                   alt={anime.title}
-                  className="h-[20vh] lg:h-48 object-cover"
+                  className="h-[25vh] lg:h-48 object-cover"
                 />
                 <div className="p-4">
                   <div className="flex items-center justify-start md:mt-0 space-x-3">
                     <h1 className="font-bold text-sm lg:text-lg md:text-xl">
                       {anime.title}
                     </h1>
-                    <h1 className="text-accent border text-[11px] border-accent px-3 py-[2px] font-semibold text-md rounded-md opacity-80">
+                    <h1 className="text-accent border flex justify-end text-[11px] border-accent px-3 py-[2px] font-semibold text-md rounded-md opacity-80">
                       {anime.type}
                     </h1>
                   </div>
